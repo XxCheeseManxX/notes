@@ -1,0 +1,39 @@
+Pipes
+
+  Purpose: Used to give the output of one command as input to another.
+  Functionality: Uses the STDOUT of one command as the STDIN to another command.
+  Pipe Character: |
+  Placed between two commands.
+  Syntax: command_1 | command_2 | command_3 | ...
+  Examples:
+    
+    ls -a | grep bash
+
+    ls | sort
+    Passes the output of ls and sorts the result alphabetically.
+
+    cat spongebob.txt | wc -w
+    wc -w: Counts the number of words in the output.
+
+    cat logfile.txt | grep "ERROR"
+
+Redirection
+  Purpose: Used to redirect the stdout, stdin, or stderr.
+  Usage: Typically used to write some output to a file. It can also redirect input.
+  Note: Pipes are used to direct the output of one process/program to another.
+  Examples:
+    ls > output.txt
+    Redirects the output to a file named output.txt.
+    If the file does not exist, it will be created. If it does exist, it will be overwritten.
+
+    echo "Hello, World!" >> output.txt
+    Appends the output to an existing file without overwriting it.
+
+    sort < output.txt
+    Uses the contents of output.txt as input to sort.
+
+    python3 outputs.py &> outputs_and_error.txt
+    &> saves both STDOUT and STDERR.
+
+    python3 outputs.py 2> outputs_and_error.txt
+    Captures STDERR only.
